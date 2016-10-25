@@ -18,7 +18,7 @@ namespace hairByMouth2
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Label1.Text = TextBox1.Text + TextBox4.Text + " ,Thank you for using Hair By Mouth and helping " + TextBox3.Text + 
+            Label1.Text = TextBox1.Text + " " + TextBox4.Text + " ,Thank you for using Hair By Mouth and helping " + TextBox3.Text + 
              " make the world a more beautiful place!";
         }
     }

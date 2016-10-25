@@ -2,24 +2,37 @@
 
 <!DOCTYPE html>
 
+
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
 </head>
+
+  
+
 <body>
     <form id="form1" runat="server">
         <p>
             Welcome to Hair By Mouth</p>
+        <p>Start by completeing the fields below...</p>
         <p>
-            Enter your first name:&nbsp;
+            Enter first name:&nbsp;
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         </p>
         <p>
-            Enter your last name:
+            Enter last name:
             <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
         </p>
+        <p>
+            &nbsp;</p>
+        <p>
+            <asp:Button ID="Button2" runat="server" Text="Search" />
+             &nbsp;or complete the following fields to share...</p>
+        <p>
+            &nbsp;</p>
         <p class="col-sm-4">
-            Enter your salon name:
+            Enter salon name:
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
         </p>
         <p>
