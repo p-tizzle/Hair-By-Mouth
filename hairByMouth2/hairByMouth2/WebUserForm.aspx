@@ -20,7 +20,7 @@
     <form id="form1" runat="server">
         <p>
             Welcome to Hair By Mouth</p>
-        <p>Start by completeing the fields below...</p>
+        <p>Start by filling out empty fieldss</p>
         <p>
             Enter first name:&nbsp;
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>

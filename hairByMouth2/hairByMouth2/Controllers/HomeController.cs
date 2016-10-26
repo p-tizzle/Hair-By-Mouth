@@ -26,5 +26,13 @@ namespace hairByMouth2.Controllers
 
             return View();
         }
+
+        public ActionResult Form()
+        {
+            ViewBag.Message = "my form";
+
+            return View();
+        }
+
     }
 }
