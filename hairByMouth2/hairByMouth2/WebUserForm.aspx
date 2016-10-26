@@ -6,12 +6,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-</head>
+    <title> Hair By Mouth</title>
+
+
+     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
 
   
-
-<body>
+</head>
+<body style="background-color:slategrey">
+    
     <form id="form1" runat="server">
         <p>
             Welcome to Hair By Mouth</p>
@@ -45,7 +50,7 @@
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Share Info" />
         </p>
         <p>
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
         </p>
     </form>
     <p>
@@ -53,10 +58,9 @@
     <p>
         &nbsp;</p>
 
-    
    
-
-
-
+   
+    
+       
 </body>
 </html>
