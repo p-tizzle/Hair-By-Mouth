@@ -1,5 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
+   
 }
 
 
@@ -7,6 +8,89 @@
     ViewBag.Title = "Form";
 }
 
-<h2>Form</h2>
 
-<p>time to make a form</p>
+
+  
+
+@{
+   
+
+
+
+    if (IsPost)
+    {
+        string friendsname = Request.Form["friendsname"];
+        <text>
+            You entered: <br />
+            Friends Name: @friendsname <br />
+        </text>
+        }
+    else
+    {
+        string yourname = Request.Form["yourname"];
+        string salonname = Request.Form["salonname"];
+        string stylistname = Request.Form["stylistname"];
+
+        <text>
+            You entered: <br />
+            Your Name: @yourname <br />
+            Salon Name: @salonname <br />
+            Stylist Name: @stylistname <br />
+        </text>
+        }
+        }
+
+
+
+    <form method="post">
+        <fieldset>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1>Looking for:</h1>
+                        <div>
+                            <label for="FriendsName">Friends Name:</label>
+                            <input type="text" name="FriendsName"
+                                   value="@Request.Form["friendsname"]" />
+                            @Html.ValidationMessage("friendsname")
+                        </div>
+                        <div>
+                            <label>&nbsp;</label>
+                            <input type="submit" value="Submit" class="submit" />
+                        </div>
+
+
+
+                        <h1>Share your salon and stylist here:</h1>
+
+                        <div>
+                            <label for="YourName">Your Name:</label>
+                            <input type="text" name="YourName"
+                                   value="@Request.Form["yourname"]" />
+                            @Html.ValidationMessage("yourname")
+                        </div>
+                        <div>
+                            <label for="SalonName">Salon Name:</label>
+                            <input type="text" name="SalonName"
+                                   value="@Request.Form["salonname"]" />
+                            @Html.ValidationMessage("salonname")
+                        </div>
+                        <div>
+                            <label for="StylistName">Stylist Name:</label>
+                            <input type="text" name="StylistName"
+                                   value="@Request.Form["stylistname"]" />
+                            @Html.ValidationMessage("stylistname")
+                        </div>
+
+
+                        <div>
+                            <label>&nbsp;</label>
+                            <input type="submit" value="Submit" class="submit" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+
