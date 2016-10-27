@@ -1,6 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-   
+
 }
 
 
@@ -13,46 +13,39 @@
   
 
 @{
-   
+
 
 
 
     if (IsPost)
     {
+        
         string friendsname = Request.Form["friendsname"];
-        <text>
-            You entered: <br />
-            Friends Name: @friendsname <br />
-        </text>
-        }
-    else
-    {
         string yourname = Request.Form["yourname"];
         string salonname = Request.Form["salonname"];
         string stylistname = Request.Form["stylistname"];
 
         <text>
             You entered: <br />
+            Friends Name: @friendsname <br />
             Your Name: @yourname <br />
             Salon Name: @salonname <br />
             Stylist Name: @stylistname <br />
         </text>
         }
-        }
+    }
 
 
 
-    <form method="post">
-        <fieldset>
+    @using (Html.BeginForm())
+    {
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h1>Looking for:</h1>
                         <div>
-                            <label for="FriendsName">Friends Name:</label>
-                            <input type="text" name="FriendsName"
-                                   value="@Request.Form["friendsname"]" />
-                            @Html.ValidationMessage("friendsname")
+                            @Html.Label("Friends Name", new { @class = "control-label" })
+                            @Html.TextBox("FriendsName", null,new { @class = "form-group" })
                         </div>
                         <div>
                             <label>&nbsp;</label>
@@ -64,25 +57,19 @@
                         <h1>Share your salon and stylist here:</h1>
 
                         <div>
-                            <label for="YourName">Your Name:</label>
-                            <input type="text" name="YourName"
-                                   value="@Request.Form["yourname"]" />
-                            @Html.ValidationMessage("yourname")
+                            @Html.Label("Your Name", new { @class = "control-label" })
+                            @Html.TextBox("YourName", null, new { @class = "form-group" })
                         </div>
                         <div>
-                            <label for="SalonName">Salon Name:</label>
-                            <input type="text" name="SalonName"
-                                   value="@Request.Form["salonname"]" />
-                            @Html.ValidationMessage("salonname")
+                            @Html.Label("Salon Name", new { @class = "control-label" })
+                            @Html.TextBox("SalonName", null, new { @class = "form-group" })
+                           
                         </div>
                         <div>
-                            <label for="StylistName">Stylist Name:</label>
-                            <input type="text" name="StylistName"
-                                   value="@Request.Form["stylistname"]" />
-                            @Html.ValidationMessage("stylistname")
+                            @Html.Label("Stylist Name", new { @class = "control-label" })
+                            @Html.TextBox("StylistName", null, new { @class = "form-group" })
+                            
                         </div>
-
-
                         <div>
                             <label>&nbsp;</label>
                             <input type="submit" value="Submit" class="submit" />
@@ -90,7 +77,8 @@
                     </div>
                 </div>
             </div>
-        </fieldset>
-    </form>
+    }
+
+  
 
 

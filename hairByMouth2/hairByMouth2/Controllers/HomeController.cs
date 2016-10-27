@@ -34,5 +34,14 @@ namespace hairByMouth2.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Form(string friendsname, string yourname,
+            string salonname, string stylistname)
+        {
+            
+
+            return View();
+        }
+
     }
 }
