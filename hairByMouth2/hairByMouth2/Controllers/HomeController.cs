@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using hairByMouth2.Models;
 
 namespace hairByMouth2.Controllers
 {
@@ -27,21 +28,30 @@ namespace hairByMouth2.Controllers
             return View();
         }
 
-        public ActionResult Form()
+        public ActionResult HairForm()
         {
             ViewBag.Message = "my form";
+            var model = new HairFormModel
+            {
+                searchModel = new SearchModel(),
+                entryModel = new EntryModel()
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Search(SearchModel searchModel)
+        { 
 
             return View();
         }
 
         [HttpPost]
-        public ActionResult Form(string friendsname, string yourname,
-            string salonname, string stylistname)
+        public ActionResult HairEntry(EntryModel entrymodel)
         {
-            
 
             return View();
         }
-
     }
 }

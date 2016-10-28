@@ -1,0 +1,92 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+@{
+    ViewBag.Title = "Hair By Mouth";
+}
+
+@model hairByMouth2.Models.HairFormModel
+
+
+
+@{
+
+
+
+
+    @*if (IsPost)
+    {
+
+        string friendsname = Request.Form["friendsname"];
+        string yourname = Request.Form["yourname"];
+        string salonname = Request.Form["salonname"];
+        string stylistname = Request.Form["stylistname"];
+
+        <text>
+            You entered: <br />
+            Friends Name: @friendsname <br />
+            Your Name: @yourname <br />
+            Salon Name: @salonname <br />
+            Stylist Name: @stylistname <br />
+        </text>
+    }*@
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+
+
+
+            @using (Html.BeginForm("Search", "Home"))
+            {
+
+                <h1>Looking for:</h1>
+                        <div>
+                            @Html.LabelFor(m => m.searchModel.friendsName, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.searchModel.friendsName, new { @class = "form-group" })
+                            @Html.ValidationMessageFor(m => m.searchModel.friendsName, null, new { @class = "text-danger"})
+                        </div>
+                        <div>
+                            <label>&nbsp;</label>
+                            <input type="submit" value="Submit" class="submit" />
+                        </div>
+
+            }
+
+            @using (Html.BeginForm("HairEntry", "Home"))
+            {
+
+                <h1>Share your salon and stylist here:</h1>
+
+                        <div>
+                            @Html.LabelFor( m => m.entryModel.yourName, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.entryModel.yourName, new { @class = "form-group" })
+                            @Html.ValidationMessageFor(m => m.entryModel.yourName, null, new { @class = "text-danger" })
+                        </div>
+                        <div>
+                            @Html.LabelFor( m => m.entryModel.salonName, new { @class = "control-label" })
+                            @Html.TextBoxFor( m => m.entryModel.salonName, new { @class = "form-group" })
+                            @Html.ValidationMessageFor(m => m.entryModel.salonName, null, new { @class = "text-danger" })
+
+
+                        </div>
+                        <div>
+                            @Html.LabelFor( m => m.entryModel.stylistName  , new { @class = "control-label" })
+                            @Html.TextBoxFor( m => m.entryModel.stylistName, new { @class = "form-group" })
+                            @Html.ValidationMessageFor(m => m.entryModel.stylistName, null, new { @class = "text-danger" })
+
+                        </div>
+                        <div>
+                            <label>&nbsp;</label>
+                            <input type="submit" value="Submit" class="submit" />
+                        </div>
+            }
+                    </div>
+                </div>
+            </div>
+            
+
