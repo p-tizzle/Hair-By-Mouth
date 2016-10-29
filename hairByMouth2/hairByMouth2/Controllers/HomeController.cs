@@ -37,21 +37,22 @@ namespace hairByMouth2.Controllers
                 entryModel = new EntryModel()
             };
 
-            return View(model);
+            return View("HairForm",model);
+
         }
 
         [HttpPost]
         public ActionResult Search(SearchModel searchModel)
-        { 
+        {
 
-            return View();
+            return View("Hairform");
         }
 
         [HttpPost]
         public ActionResult HairEntry(EntryModel entrymodel)
         {
 
-            return View();
+            return View("HairForm");
         }
     }
-}
+    }
