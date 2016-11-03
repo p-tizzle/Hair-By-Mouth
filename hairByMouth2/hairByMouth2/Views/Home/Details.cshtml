@@ -1,0 +1,43 @@
+﻿@model hairByMouth2.Models.EntryModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EntryModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.yourName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yourName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salonName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salonName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stylistName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stylistName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

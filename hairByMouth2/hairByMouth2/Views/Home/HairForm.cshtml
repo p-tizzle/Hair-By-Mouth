@@ -1,44 +1,21 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
+﻿
+@model hairByMouth2.Models.HairFormModel
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-
 }
+
+
+
 
 
 @{
     ViewBag.Title = "Hair By Mouth";
 }
 
-@model hairByMouth2.Models.HairFormModel
 
 
 
-@{
-
-
-
-
-    @*if (IsPost)
-        {
-
-            string friendsname = Request.Form["friendsname"];
-            string yourname = Request.Form["yourname"];
-            string salonname = Request.Form["salonname"];
-            string stylistname = Request.Form["stylistname"];
-
-            <text>
-                You entered: <br />
-                Friends Name: @friendsname <br />
-                Your Name: @yourname <br />
-                Salon Name: @salonname <br />
-                Stylist Name: @stylistname <br />
-            </text>
-        }*@
-}
 
 <div class="container">
     <div class="row">
@@ -48,6 +25,7 @@
 
             @using (Html.BeginForm("Search", "Home"))
             {
+               
 
                 <h1>Looking for:</h1>
                 <div>
@@ -64,7 +42,7 @@
 
             @using (Html.BeginForm("HairEntry", "Home"))
             {
-
+                @Html.AntiForgeryToken()
                 <h1>Share your salon and stylist here:</h1>
 
                 <div>
@@ -92,6 +70,9 @@
             }
         </div>
     </div>
+</div>
+<div>
+    @Html.ActionLink("Back to List", "List")
 </div>
 
 
