@@ -244,12 +244,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\HairForm.cshtml" />
     <Content Include="Views\EntryModels\Create.cshtml" />
     <Content Include="Views\EntryModels\Delete.cshtml" />
     <Content Include="Views\EntryModels\Details.cshtml" />
     <Content Include="Views\EntryModels\Edit.cshtml" />
     <Content Include="Views\EntryModels\Index.cshtml" />
+    <Content Include="Views\Home\HairForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
