@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EntryModelsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Data\HairContext.cs" />
@@ -244,6 +245,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\HairForm.cshtml" />
+    <Content Include="Views\EntryModels\Create.cshtml" />
+    <Content Include="Views\EntryModels\Delete.cshtml" />
+    <Content Include="Views\EntryModels\Details.cshtml" />
+    <Content Include="Views\EntryModels\Edit.cshtml" />
+    <Content Include="Views\EntryModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

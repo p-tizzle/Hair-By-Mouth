@@ -3,6 +3,9 @@ namespace hairByMouth2.Data
     using System;
     using System.Data.Entity;
     using System.Linq;
+    using System.Collections.Generic;
+    using System.Data.Entity.ModelConfiguration.Conventions;
+
 
     public class HairContext : DbContext
     {
@@ -17,15 +20,18 @@ namespace hairByMouth2.Data
         {
         }
 
+       
+        
+
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
-        // public virtual DbSet<MyEntity> MyEntities { get; set; }
-    }
+         public virtual DbSet<Models.EntryModel> EntryModels { get; set; }
 
-    //public class MyEntity
-    //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //}
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }
+    }
 }
+

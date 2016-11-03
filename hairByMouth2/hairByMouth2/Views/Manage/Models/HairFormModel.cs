@@ -23,6 +23,7 @@ namespace hairByMouth2.Models
 
     public class EntryModel
     {
+        public int ID { get; set; }
         [Required]
         [Display(Name = "Your Name")]
         public string yourName { get; set; }
@@ -32,5 +33,8 @@ namespace hairByMouth2.Models
         [Required]
         [Display(Name = "Stylist Name")]
         public string stylistName { get; set; }
+
+        
     }
+
 }
