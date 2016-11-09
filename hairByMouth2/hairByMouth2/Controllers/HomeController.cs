@@ -70,25 +70,30 @@ namespace hairByMouth2.Controllers
 
         }
 
+        
+        public ActionResult Search()
+        {
+
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Search(SearchModel searchModel)
         {
-
-            return View("Hairform");
+            var friendsName = from f in db.EntryModels
+                           select f;
+            return View("HairForm");
         }
 
-       
+
+
+
         public ActionResult HairEntry()
         {
 
             return View();
         }
-        // GET: EntryModels/Create
-
-
-        // POST: EntryModels/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult HairEntry([Bind(Include = "ID,yourName,salonName,stylistName")] EntryModel entryModel)
@@ -104,7 +109,7 @@ namespace hairByMouth2.Controllers
 
     
 
-    // GET: EntryModels/Edit/5
+   
     public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -119,9 +124,7 @@ namespace hairByMouth2.Controllers
             return View(entryModel);
         }
 
-        // POST: EntryModels/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,yourName,salonName,stylistName")] EntryModel entryModel)
@@ -135,7 +138,7 @@ namespace hairByMouth2.Controllers
             return View(entryModel);
         }
 
-        // GET: EntryModels/Delete/5
+       
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -150,7 +153,7 @@ namespace hairByMouth2.Controllers
             return View(entryModel);
         }
 
-        // POST: EntryModels/Delete/5
+       
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
