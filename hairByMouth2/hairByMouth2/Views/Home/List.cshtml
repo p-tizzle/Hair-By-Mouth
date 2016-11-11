@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Please log in as User or Register as new user to Edit your information</h2>
 
 
 <table class="table">
@@ -34,9 +34,15 @@
                 @Html.DisplayFor(modelItem => item.stylistName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @if (Request.IsAuthenticated)
+                {
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                }
+                @if(Request.IsAuthenticated)
+                { 
                 @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                }
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
             </td>
         </tr>
     }

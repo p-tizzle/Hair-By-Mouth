@@ -116,7 +116,7 @@ namespace hairByMouth2.Controllers
 
     
 
-   
+   [Authorize]
     public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -145,7 +145,7 @@ namespace hairByMouth2.Controllers
             return View(entryModel);
         }
 
-       
+       [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
