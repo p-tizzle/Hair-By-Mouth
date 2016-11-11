@@ -70,22 +70,28 @@ namespace hairByMouth2.Controllers
 
         }
 
-        
-        public ActionResult Search()
-        {
-
-            return View();
-        }
-
         [HttpPost]
         public ActionResult Search(SearchModel searchModel)
         {
-            var friendsName = from f in db.EntryModels
-                           select f;
-            return View("HairForm");
+            
+
+            if (ModelState.IsValid)
+            {
+                var friends = db.EntryModels.FirstOrDefault(n => n.yourName.Contains(searchModel.friendsName));
+                if (friends == null)
+                {
+                    return View("HairForm");
+                }
+                else
+                {
+                    return RedirectToAction("Details", friends);
+                }
+            }
+
+            return View(searchModel);
         }
 
-
+       
 
 
         public ActionResult HairEntry()
