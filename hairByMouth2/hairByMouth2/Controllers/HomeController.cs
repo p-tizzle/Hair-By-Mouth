@@ -80,6 +80,7 @@ namespace hairByMouth2.Controllers
                 var friends = db.EntryModels.FirstOrDefault(n => n.yourName.Contains(searchModel.friendsName));
                 if (friends == null)
                 {
+
                     return View("HairForm");
                 }
                 else
